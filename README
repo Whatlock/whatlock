@@ -1,2 +1,15 @@
 # Whatlock
 ## Sherlock inspired stylesheet for What.CD
+
+### Setup
+
+```rake dotjs:symlink```
+```rake pow:setup```
+
+### Development
+
+```rake stylesheets:watch```
+
+### Shortcuts
+
+```rake whatcd:thread```
