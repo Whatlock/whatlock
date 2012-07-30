@@ -182,6 +182,7 @@ $searchbars-input-height: $searchbars-height - 20px - 2px
       margin: 0 auto
       width: $site-width
       li
+        position: relative
         display: block
         float: left
         margin-right: $searchbars-input-gap
@@ -207,6 +208,12 @@ $searchbars-input-height: $searchbars-height - 20px - 2px
             color: $searchbars-input-focus
         &:last-child
           margin-right: 0
+    #artistcomplete
+      position: absolute
+      left: 1px
+      top: $searchbars-input-height
+      width: $searchbars-input-width - 20px
+      padding: 10px
 
   ul
     margin: 0

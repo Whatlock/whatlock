@@ -805,16 +805,17 @@ table {
 }
 /* line 184, ../src/layout/_header.sass */
 #header #searchbars ul li {
+  position: relative;
   display: block;
   float: left;
   margin-right: 10px;
   width: 148px;
 }
-/* line 189, ../src/layout/_header.sass */
+/* line 190, ../src/layout/_header.sass */
 #header #searchbars ul li span {
   display: none;
 }
-/* line 191, ../src/layout/_header.sass */
+/* line 192, ../src/layout/_header.sass */
 #header #searchbars ul li input[type=text] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -834,16 +835,24 @@ table {
   color: #cbcbcb;
   outline: none;
 }
-/* line 205, ../src/layout/_header.sass */
+/* line 206, ../src/layout/_header.sass */
 #header #searchbars ul li input[type=text]:focus {
   border-color: rgba(57, 119, 178, 0.5);
   color: black;
 }
-/* line 208, ../src/layout/_header.sass */
+/* line 209, ../src/layout/_header.sass */
 #header #searchbars ul li:last-child {
   margin-right: 0;
 }
 /* line 211, ../src/layout/_header.sass */
+#header #searchbars #artistcomplete {
+  position: absolute;
+  left: 1px;
+  top: 32px;
+  width: 128px;
+  padding: 10px;
+}
+/* line 218, ../src/layout/_header.sass */
 #header ul {
   margin: 0;
   padding: 0;
