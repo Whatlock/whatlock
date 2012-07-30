@@ -1,0 +1,214 @@
+// Variables
+$header-height:     120px
+$logo-width:        70px
+$logo-height:       35px
+$menu-height:       28px
+$searchbars-height: 54px
+$searchbars-input-gap: 10px
+$searchbars-input-width: (($site-width - $searchbars-input-gap) / 6) - $searchbars-input-gap + 3px
+$searchbars-input-height: $searchbars-height - 20px - 2px
+
+#wrapper > h1.hidden
+  position: absolute
+  left: 50%
+  top: 0
+  display: block
+  width: $logo-width
+  height: $logo-height
+  margin: 0
+  margin-left: ($site-width / 2) * -1
+  z-index: 1
+  -webkit-font-smoothing: antialiased
+  font-size: 16px
+  font-weight: bold
+  line-height: $logo-height
+  text-align: center
+  color: $header-title-text
+  +text-shadow($header-title-text-shadow 0 1px 1px)
+
+#header
+  position: relative
+  height: $header-height
+  +background(linear-gradient($header-background-start 0, $header-background-end 35px))
+
+  #logo
+    width: $logo-width
+    height: $logo-height
+    position: absolute
+    left: 50%
+    top: 0
+    margin-left: ($site-width / 2) * -1
+    z-index: 2
+    a
+      display: block
+      width: $logo-width
+      height: $logo-height
+
+  #userinfo_username
+    position: absolute
+    right: 50%
+    top: 0
+    margin-right: ($site-width / 2) * -1
+    -webkit-font-smoothing: antialiased
+    li
+      display: inline-block
+      margin-left: 10px
+      line-height: 15px
+      height: 15px
+      padding: 10px 0 10px
+      a
+        text-decoration: none
+        font-size: 12px
+        font-weight: bold
+        color: $userinfo-off
+        +transition-property(color)
+        +transition-duration(0.2s)
+        &:visited
+          color: $userinfo-visited
+        &:hover
+          color: $userinfo-hover
+        &:focus
+          color: $userinfo-focus
+        &:active
+          color: $userinfo-active
+      &#nav_userinfo a
+        color: $userinfo-username
+
+  #userinfo_major
+    position: absolute
+    left: 50%
+    top: 0
+    width: auto
+    line-height: $logo-height - 8px - 8px - 4px
+    margin-top: 4px
+    margin-left: (($site-width / 2) * -1) + $logo-width + 20px
+    padding: 3px 8px 5px
+    +border-radius(4px)
+    background: $userinfo-major-background
+    &:before
+      position: absolute
+      left: -6px
+      top: 3px
+      content: ""
+      display: block
+      width: $logo-height - 8px - 8px
+      height: $logo-height - 8px - 8px
+      background: $userinfo-major-background
+      +border-radius(4px)
+      +transform(rotate(45deg))
+      z-index: 0
+    li
+      position: relative
+      float: left
+      margin-right: 10px
+      z-index: 1
+      &:last-child
+        margin-right: 0
+      a
+        text-decoration: none
+        display: inline
+        font-size: 11px
+        font-weight: bold
+        color: $userinfo-major-off
+        +transition-property(color)
+        +transition-duration(0.2s)
+        &:visited
+          color: $userinfo-major-visited
+        &:hover
+          color: $userinfo-major-hover
+        &:focus
+          color: $userinfo-major-focus
+        &:active
+          color: $userinfo-major-active
+
+  #userinfo_stats
+    display: none
+
+  #userinfo_minor
+    display: none
+
+  #menu
+    position: absolute
+    left: 0
+    top: $logo-height
+    width: 100%
+    height: $menu-height
+    background: $menu-background
+    border-top: 1px solid $menu-highlight
+    border-bottom: 1px solid $menu-border
+    ul
+      margin: 0 auto
+      width: $site-width
+      li
+        float: left
+        a
+          display: block
+          height: 14px
+          text-decoration: none
+          padding: 7px 10px
+          font-size: 12px
+          font-weight: bold
+          line-height: 14px
+          color: $menu-off
+          border-right: 1px solid $menu-border
+          +transition-property(color)
+          +transition-duration(0.2s)
+          &:visited
+            color: $menu-visited
+          &:hover
+            color: $menu-hover
+          &:focus
+            outline: none
+            color: $menu-focus
+          &:active
+            color: $menu-active
+        &:first-child a
+          border-left: 1px solid $menu-border
+
+  #alerts
+    display: none
+
+  #searchbars
+    position: absolute
+    left: 0
+    top: $logo-height + $menu-height + 2
+    padding: 10px 0
+    width: 100%
+    height: $searchbars-height - 20px
+    background: $searchbars-background
+    +background(linear-gradient($searchbars-background 0, $searchbars-background 50%, darken($searchbars-background,1%) 50%, darken($searchbars-background,1%) 100%))
+    border-bottom: 1px solid $searchbars-border
+    ul
+      margin: 0 auto
+      width: $site-width
+      li
+        display: block
+        float: left
+        margin-right: $searchbars-input-gap
+        width: $searchbars-input-width
+        span
+          display: none
+        input[type=text]
+          +appearance(none)
+          display: block
+          height: $searchbars-input-height - 10px
+          line-height: $searchbars-input-height - 10px
+          padding: 5px 10px
+          width: $searchbars-input-width - 20px
+          -webkit-font-smoothing: antialiased
+          font-size: 14px
+          font-weight: bold
+          +box-shadow(0 0 0 2px $searchbars-input-shadow inset)
+          border: 1px solid $searchbars-input-border
+          color: $searchbars-input-text
+          outline: none
+          &:focus
+            border-color: $searchbars-input-focus-border
+            color: $searchbars-input-focus
+        &:last-child
+          margin-right: 0
+
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
