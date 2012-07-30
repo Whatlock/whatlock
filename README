@@ -1,6 +1,12 @@
 # Whatlock
 ## Sherlock inspired stylesheet for What.CD
 
+So as some of you may know, i am responsible for the looks of Sherlock. Since the skin was put live i have had a series of requests to make a site wide theme with similar looks to Sherlock. I already had something like this planned but a few good pushes from users finally got me in the design chair and started on it.
+
+I will be hoping to update it regularly and have a little beta version within the next month(if time permits - new job and all...).
+
+For now though, i am looking for feedback. I really wanna make sure this theme is easy to use and takes into consideration the people using it.
+
 ### Setup
 
 ```rake dotjs:symlink```
@@ -13,3 +19,10 @@
 ### Shortcuts
 
 ```rake whatcd:thread```
+
+### Thanks
+
+* Cawlin
+* Amareus
+* popz
+* laxer3n7
