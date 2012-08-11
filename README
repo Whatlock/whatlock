@@ -1,11 +1,20 @@
 # Whatlock
 ## Sherlock inspired stylesheet for What.CD
 
-So as some of you may know, i am responsible for the looks of Sherlock. Since the skin was put live i have had a series of requests to make a site wide theme with similar looks to Sherlock. I already had something like this planned but a few good pushes from users finally got me in the design chair and started on it.
+### Roadmap
 
-I will be hoping to update it regularly and have a little beta version within the next month(if time permits - new job and all...).
+#### Customisation
 
-For now though, i am looking for feedback. I really wanna make sure this theme is easy to use and takes into consideration the people using it.
+Will allow the user to generate a stylesheet based on their needs. For example, you may never use the the 'collector' feature on an artist page and therefore not need it. You can toggle features on or off and change colours etc.
+
+#### Buffer
+
+Integrate a _buffer_ statistic into the header. Personally, I find this much more useful than the ratio.
+
+#### Responsive Web Design
+
+It would be great to create a responsive stylesheet based on Whatlock. It is something that would take time. It is an idea though.
+
 
 ### Setup
 
@@ -20,9 +29,25 @@ For now though, i am looking for feedback. I really wanna make sure this theme i
 
 ```rake whatcd:thread```
 
-### Thanks
+### Thanks to
 
-* Cawlin
+* mlapaglia
+* ridejkcl
+* delasteve
 * Amareus
-* popz
-* laxer3n7
+* sketchles
+* refreshingapathy
+
+### Supported by
+
+* seasnake4
+* dblaze
+* pjot
+* acolytic
+* brontosaurus
+* ickis
+* guegs
+* jamesC
+* chewmeiser
+* passo
+* saltydog
