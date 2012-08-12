@@ -1,8 +1,23 @@
 // Variables
 $header-content-gap: 20px
+$sidebar-width: 200px
+$main-sidebar-gap: 20px
+$main-width: $site-width - $sidebar-width - $main-sidebar-gap
 
 #content
   padding-top: $header-content-gap
   & > .thin
     width: $site-width
     margin: 0 auto
+
+// Pages with sidebar
+#index
+  #content > .thin
+    padding-right: $sidebar-width + $main-sidebar-gap
+    width: $main-width
+    .main_column
+      width: $main-width
+    .sidebar
+      float: right
+      margin-right: ($sidebar-width + $main-sidebar-gap) * -1
+      width: $sidebar-width
