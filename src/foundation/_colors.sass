@@ -1,11 +1,24 @@
-// Base coloring
+// Base
 $primary:                             #3977b2
+
+// Global
+$body-background:                     #fff
 
 // Header
 $header-title-text:                   #fff
 $header-title-text-shadow:            darken($primary,10%)
 $header-background-start:             lighten($primary,5%)
 $header-background-end:               darken($primary,5%)
+
+// Menu
+$menu-background:                     #ebebeb
+$menu-border:                         #d8d8d8
+$menu-highlight:                      #fff
+$menu-off:                            #444
+$menu-hover:                          $primary
+$menu-focus:                          $menu-hover
+$menu-visited:                        $menu-off
+$menu-active:                         darken($menu-hover,10%)
 
 // Userinfo
 $userinfo-username:                   #fff
@@ -23,15 +36,14 @@ $userinfo-major-focus:                $userinfo-hover
 $userinfo-major-visited:              $userinfo-off
 $userinfo-major-active:               #fff
 
-// Menu
-$menu-background:                     #ebebeb
-$menu-border:                         #d8d8d8
-$menu-highlight:                      #fff
-$menu-off:                            #444
-$menu-hover:                          $primary
-$menu-focus:                          $menu-hover
-$menu-visited:                        $menu-off
-$menu-active:                         darken($menu-hover,10%)
+// Userinfo - Stats
+$userinfo-stats:                      #888
+$userinfo-stats-off:                  #444
+$userinfo-stats-hover:                $primary
+$userinfo-stats-focus:                $userinfo-stats-hover
+$userinfo-stats-visited:              $userinfo-stats-off
+$userinfo-stats-active:               darken($userinfo-stats-hover,10%)
+$userinfo-border:                     $menu-border
 
 // Searchbars
 $searchbars-background:               #f6f6f6
@@ -39,6 +51,9 @@ $searchbars-border:                   #e7e7e7
 $searchbars-input-border:             $searchbars-border
 $searchbars-input-shadow:             fade-out($searchbars-input-border,0.8)
 $searchbars-input-text:               #cbcbcb
-$searchbars-input-focus:              #000
+$searchbars-input-focus:              #444
 $searchbars-input-focus-border:       fade-out($primary,0.5)
-$searchbars-autocomplete-background:  $searchbars-input-focus-border
+$searchbars-autocomplete-background:  #fff
+$searchbars-autocomplete-border:      $searchbars-input-border
+$searchbars-autocomplete:             fade-out($searchbars-input-focus,0.5)
+$searchbars-autocomplete-highlight:   $primary
