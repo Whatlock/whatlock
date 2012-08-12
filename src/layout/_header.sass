@@ -7,6 +7,7 @@ $searchbars-height: 54px
 $searchbars-input-gap: 10px
 $searchbars-input-width: (($site-width - $searchbars-input-gap) / 6) - $searchbars-input-gap + 3px
 $searchbars-input-height: $searchbars-height - 20px - 2px
+$alerts-width: 200px
 
 #wrapper > h1.hidden
   position: absolute
@@ -126,7 +127,7 @@ $searchbars-input-height: $searchbars-height - 20px - 2px
     right: 50%
     top: $logo-height
     padding: 8px 10px 6px 0
-    margin-right: (($site-width / 2) * -1)
+    margin-right: (($site-width / 2) * -1) + $menu-height + 1px
     z-index: 3
     border-right: 1px solid $menu-border
     line-height: $logo-height - 8px - 8px - 4px
@@ -232,7 +233,51 @@ $searchbars-input-height: $searchbars-height - 20px - 2px
           margin-left: -93px
 
   #alerts
-    display: none
+    position: absolute
+    top: $logo-height + 1px
+    right: 50%
+    margin-right: (($site-width / 2) * -1)
+    height: $menu-height
+    width: $menu-height
+    border-right: 1px solid $menu-border
+    background: $icon-bell no-repeat 7px 5px
+    .alertbar
+      position: absolute
+      top: $menu-height
+      right: -1px
+      z-index: 1
+      width: $alerts-width
+      border: 1px solid $menu-border
+      background: $menu-background
+      a
+        display: block
+        padding: 8px 10px
+        font-size: 11px
+        text-decoration: none
+        border-bottom: $menu-border
+        color: $menu-off
+        +transition-property(color)
+        +transition-duration(0.2s)
+        &:visited
+          color: $menu-visited
+        &:hover
+          color: $menu-hover
+        &:focus
+          outline: none
+          color: $menu-focus
+        &:active
+          color: $menu-active
+      &:before
+        display: block
+        position: absolute
+        top: -1px
+        right: 0
+        content: ""
+        width: $menu-height
+        height: 1px
+        background: $menu-background
+    &:hover .alertbar
+      display: block
 
   #searchbars
     position: absolute
