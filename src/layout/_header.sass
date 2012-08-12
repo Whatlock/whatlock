@@ -314,6 +314,8 @@ $alerts-width: 200px
           border: 1px solid $searchbars-input-border
           color: $searchbars-input-text
           outline: none
+          +transition-property("border-color")
+          +transition-duration(0.2s)
           &:focus
             border-color: $searchbars-input-focus-border
             color: $searchbars-input-focus
