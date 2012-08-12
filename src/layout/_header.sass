@@ -193,6 +193,43 @@ $searchbars-input-height: $searchbars-height - 20px - 2px
           display: none
         &#nav_torrents
           border-left: 1px solid $menu-border
+        // Move site-related options to top
+        &#nav_irc, &#nav_rules, &#nav_wiki, &#nav_staff
+          position: absolute
+          top: -36px
+          left: 50%
+          line-height: $logo-height - 8px - 8px - 4px
+          margin-top: 4px
+          margin-left: -185px
+          padding: 3px 8px 5px
+          background: $userinfo-major-background
+          a
+            text-decoration: none
+            display: inline
+            padding: 0
+            font-size: 11px
+            font-weight: bold
+            border: 0
+            color: $userinfo-major-off
+            +transition-property(color)
+            +transition-duration(0.2s)
+            &:visited
+              color: $userinfo-major-visited
+            &:hover
+              color: $userinfo-major-hover
+            &:focus
+              color: $userinfo-major-focus
+            &:active
+              color: $userinfo-major-active
+        &#nav_irc
+          margin-left: -189px
+        &#nav_rules
+          margin-left: -162px
+        &#nav_wiki
+          margin-left: -123px
+        &#nav_staff
+          +border-right-radius(4px)
+          margin-left: -93px
 
   #alerts
     display: none
