@@ -1,0 +1,21 @@
+=animate($name, $duration: 1s, $delay: 0, $function: ease, $mode: both)
+  +experimental(animation, $name $duration $delay $function $mode)
+
+=keyframes($name)
+  @-moz-keyframes #{$name}
+    @content
+  @-webkit-keyframes #{$name}
+    @content
+  @-o-keyframes #{$name}
+    @content
+  @-khtml-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+// Pulse
++keyframes(pulse)
+  0%, 80%, 100%
+    +opacity(1)
+  40%
+    +opacity(0.25)
