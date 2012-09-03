@@ -1,0 +1,205 @@
+$artist-header-spacing: 20px
+$artist-discog-links-height: 30px
+$artist-discog-links-margin: 20px
+$artist-discog-links-count: 13
+$artist-image-margin-top: $artist-discog-links-height + $artist-discog-links-margin + 20px
+
+body#artist
+  // Set relative positioning for page changes
+  #content
+    position: relative
+
+  // Main Column Adjustments
+  .main_column
+    margin-top: $artist-discog-links-height + $artist-discog-links-margin + $artist-header-spacing
+
+  // Header
+  .header
+    margin-bottom: $artist-header-spacing
+    h2
+      @extend %h1
+      font-size: 30px
+      margin: 0
+      color: $primary
+
+  // Artist site links
+  .linkbox
+    font-size: 90%
+    a
+      text-decoration: none
+      color: $artist-linkbox-link
+      &:hover
+        color: $artist-linkbox-hover
+      &:focus
+        color: $artist-linkbox-focus
+      &:active
+        color: $artist-linkbox-active
+      &:visited
+        color: $artist-linkbox-visited
+
+  // Discography links
+  #discog_table
+    position: relative
+    .box
+      height: $artist-discog-links-height
+      width: $site-width - 2px - 10px
+      position: absolute
+      left: -1px
+      top: ($artist-discog-links-height + $artist-discog-links-margin + 20px + 1px) * -1
+      +background(linear-gradient($artist-discog-links-background 0, $artist-discog-links-background 50%, darken($artist-discog-links-background,1%) 50%, darken($artist-discog-links-background,1%) 100%))
+      +box-shadow(0 1px 1px #fff,0 1px 1px $artist-discog-links-shadow inset)
+      +border-radius(4px)
+      border: 1px solid $artist-discog-links-border
+      padding: 0 5px
+      a
+        text-decoration: none
+        color: $artist-discog-links-link
+        float: left
+        display: block
+        text-align: center
+        padding: 4px 5px
+        line-height: $artist-discog-links-height - 8
+        +text-shadow(0 1px #fff)
+        &:hover
+          color: $artist-discog-links-hover
+        &:focus
+          color: $artist-discog-links-focus
+        &:active
+          color: $artist-discog-links-active
+        &:visited
+          color: $artist-discog-links-visited
+
+  // Torrent Tables
+  // TODO: Major cleanup, color variables etc.
+  .torrent_table
+    margin-left: 20px
+    margin-right: 20px
+    width: $main-width - 2px - 40px
+    // Remove background color
+    tr.colhead_dark td
+      background: #fff
+      border: 0
+      color: #fff
+    tr.colhead_dark td.small
+      width: 20px
+    // Back to top and expand/collapse link
+    tr.colhead_dark td.small + td a
+      display: none
+    // Section title
+    tr.colhead_dark strong
+      @extend %h1
+      display: inline-block
+      margin-top: -22px
+      position: relative
+      left: -34px
+      color: $text
+    // Release heading
+    tr.group td
+      background: fade-out($primary,0.95)
+    tr.group td.center
+      border-right: 0
+    tr.group td.center + td
+      border-left: 0
+    tr.group strong, tr.group .tags
+      position: relative
+      left: -24px
+    tr.group strong
+      @extend %h2
+      color: $primary
+      a
+        text-decoration: none
+    tr.group .tags
+      font-size: 90%
+      color: $primary
+      +opacity(0.8)
+      a
+        text-decoration: none
+    tr.group_torrent:hover td
+      background: fade-out($table-heading-background,0.1)
+
+
+  // Artist Image
+  .sidebar .box_image
+    border: 0
+    +box-shadow(none)
+    overflow: hidden
+    position: relative
+    padding-left: 0
+    padding-bottom: 0
+    margin-left: -10px
+    margin-top: $artist-image-margin-top
+    div
+      padding: 0 !important
+    .head
+      display: none
+    img
+      margin-bottom: 0
+      width: 240px
+      max-width: 240px !important
+      margin-right: 5px
+    // Shadow
+    &:before, &:after
+      content: ""
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 10
+      width: 10px
+      height: 500px
+    &:before
+      +background-image(linear-gradient(left,rgba(0,0,0,0.25),rgba(0,0,0,0)))
+    &:after
+      left: auto
+      right: 0
+      width: 5px
+      background: $primary
+
+  // Requests
+  #requests
+    margin-left: 20px
+    margin-right: 20px
+    width: $main-width - 2px - 40px
+  #requests:before
+    display: block
+    content: "Requests"
+    @extend %h1
+    position: relative
+    top: -5px
+
+  // Similar Artists
+  #similar_artist_map
+    margin-left: 20px
+    margin-right: 20px
+    margin-bottom: 20px
+  #flipper_head
+    margin-bottom: 10px
+  #flipper_title
+    @extend %h2
+    color: $text
+    display: block
+  #flip_to
+    font-size: 12px
+    text-decoration: none
+  #flip_view_1, #flip_view_2
+    @extend %sunken-bordered-container
+    width: $main-width - 2px - 40px - 20px !important
+
+  // About the artist
+  #similar_artist_map + script + div
+    margin-left: 20px
+    margin-right: 20px
+
+  // Collector
+  .sidebar #list
+    margin: 0 0 10px
+  .sidebar #list a
+    text-decoration: none
+  .sidebar #formats
+    width: 182px !important
+  .sidebar #formats, .sidebar #formats + button, .sidebar #formats + button + select
+    margin-bottom: 5px
+
+  // Similar Artists
+  .sidebar .box_artists div a
+    text-decoration: none

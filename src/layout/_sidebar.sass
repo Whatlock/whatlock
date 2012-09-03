@@ -1,0 +1,39 @@
+$sidebar-box-spacing: 30px
+$sidebar-box-head-bottom-margin: 5px
+$sidebar-box-border-width: 1px
+$sidebar-box-image-border-width: 4px
+
+#content .sidebar
+
+  // Forms
+  form select
+    width: 208px !important
+
+  // Sidebar Boxes
+  .box
+    margin-bottom: ($sidebar-box-spacing / 2) - $sidebar-box-border-width
+    padding-bottom: $sidebar-box-spacing / 2
+    border-bottom: $sidebar-box-border-width solid $sidebar-box-border
+    +box-shadow(0 $sidebar-box-border-width 0 $sidebar-box-border-highlight)
+
+    // Last box
+    &:last-child
+      border-bottom: 0
+      +box-shadow(none)
+
+    // Title - seriously, why the lack of h1,h2,h3 tags!?
+    .head
+      @extend %h4
+      color: $sidebar-box-title
+      margin-bottom: $sidebar-box-head-bottom-margin
+      +text-shadow(1px 1px $sidebar-box-title-shadow)
+    .head a
+      text-decoration: none
+      color: $sidebar-box-title
+
+    // Images within sidebar boxes
+    img[width='100%']
+      border: $sidebar-box-image-border-width solid $sidebar-box-image-border
+      +box-shadow(0 1px 2px $sidebar-box-image-shadow)
+      width: $sidebar-width - ($sidebar-box-image-border-width * 2)
+

@@ -47,6 +47,8 @@ $minor-width: 120px
       display: block
       width: $logo-width
       height: $logo-height
+      line-height: 10px
+      color: red !important
 
   #userinfo
     margin: 0 auto
@@ -91,10 +93,10 @@ $minor-width: 120px
     left: 50%
     top: 0
     width: 185px
-    line-height: $logo-height - 8px - 8px - 4px
+    line-height: $logo-height - 8px - 8px
     margin-top: 4px
     margin-left: (($site-width / 2) * -1) + $logo-width + 20px
-    padding: 3px 8px 5px
+    padding: 3px 8px 3px
     +border-radius(4px)
     background: $userinfo-major-background
     &:before
@@ -103,8 +105,8 @@ $minor-width: 120px
       top: 3px
       content: ""
       display: block
-      width: $logo-height - 8px - 8px
-      height: $logo-height - 8px - 8px
+      width: $logo-height - 8px - 8px + 1px
+      height: $logo-height - 8px - 8px + 1px
       background: $userinfo-major-background
       +border-radius(4px)
       +transform(rotate(45deg))
@@ -140,7 +142,7 @@ $minor-width: 120px
     padding: 8px 10px 6px 0
     z-index: 3
     border-right: 1px solid $menu-border
-    line-height: $logo-height - 8px - 8px - 4px
+    line-height: $logo-height - 8px - 8px - 8px
     font-size: 11px
     font-weight: bold
     li
@@ -277,10 +279,10 @@ $minor-width: 120px
           position: absolute
           top: -36px
           left: 50%
-          line-height: $logo-height - 8px - 8px - 4px
+          line-height: $logo-height - 8px - 8px
           margin-top: 4px
           margin-left: -185px
-          padding: 3px 8px 5px
+          padding: 4px 8px 3px
           background: $userinfo-major-background
           a
             text-decoration: none
@@ -452,6 +454,7 @@ $minor-width: 120px
         &:last-child
           margin-right: 0
     #artistcomplete
+      z-index: 100
       position: absolute
       left: 0 
       top: $searchbars-input-height + 1px

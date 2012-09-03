@@ -1,0 +1,110 @@
+$main-column-padding: 20px
+
+$news-spacing: 15px
+$news-head-bottom-margin: 10px
+
+body#index
+  // News Article
+  div[id^=news]
+    padding: 20px
+    border-bottom: 1px solid $news-border
+    .head
+      margin-bottom: $news-head-bottom-margin
+      background: $news-head-background
+    // Title
+    .head strong
+      @extend %h1
+      color: $news-head-title
+    // Time Ago
+    .head span
+      display: block
+      font-size: 11px
+      color: $news-head-time-ago
+      &:before
+        content: "Posted "
+
+  // Vanity house additions
+  #recommended
+    border-bottom: 1px solid $recommended-border
+    margin-top: -20px
+    padding: 10px 20px
+    .head
+      @extend h4
+      margin: 0
+      overflow: hidden
+      strong
+        float: left
+      a
+        float: right
+        text-decoration: none
+  #vanityhouse
+    // TODO: Better formatting
+    margin: 10px 0 0
+    width: 100%
+    a
+      // TODO: Introduce underline again in a nice way
+      text-decoration: none
+    td
+      padding-bottom: 10px
+      font-weight: bold
+    .tags
+      font-size: 10px
+      font-weight: normal
+    .tags a
+      color: $text
+
+  // Merchandise
+  #merchbox .pad
+    color: $body-background
+    overflow: hidden
+    em
+      font-style: normal
+    a
+      text-decoration: none
+    a:first-child
+      float: left
+    a:nth-child(2)
+      float: right
+      &:before
+        content: "By "
+  
+  // Featured Album
+  // TODO: Clean up artist/album display
+  .sidebar > .box:nth-child(2)
+    .head + div
+      color: $body-background
+      a
+        display: block
+        text-decoration: none
+      // Artist Name
+      // TODO: Icon
+      a:first-child
+        font-weight: bold
+      // Album Name
+      // TODO: Icon
+      a:nth-child(2)
+        font-weight: normal
+        margin-top: -20px
+    // Album Art
+    img
+      margin-bottom: 5px
+    // Interview text
+    // TODO: Icon and padding
+    div:last-child a
+      text-decoration: none
+      display: block
+      text-align: center
+      font-size: 80%
+      em
+        font-style: normal
+
+  // Latest blog posts
+  // TODO: Better display 
+  .sidebar > .box:nth-child(3)
+    ul
+      li
+        color: $body-background
+        margin-bottom: 5px
+      a
+        margin-left: -12px
+        text-decoration: none

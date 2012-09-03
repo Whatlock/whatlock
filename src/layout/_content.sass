@@ -1,18 +1,12 @@
 // Variables
 $header-content-gap: 20px
-$sidebar-width: 200px
+$sidebar-width: 220px
 $main-sidebar-gap: 20px
 $main-width: $site-width - $sidebar-width - $main-sidebar-gap
 
-#content
-  padding-top: $header-content-gap
-  & > .thin
-    width: $site-width
-    margin: 0 auto
-
 // Pages with sidebar
-#index, #torrents, #wiki, #user
-  #content > .thin
+#index, #torrents, #wiki, #user, #artist
+  #content
     padding-right: $sidebar-width + $main-sidebar-gap
     width: $main-width
     .main_column
@@ -20,4 +14,65 @@ $main-width: $site-width - $sidebar-width - $main-sidebar-gap
     .sidebar
       float: right
       margin-right: ($sidebar-width + $main-sidebar-gap) * -1
-      width: $sidebar-width
+      width: $sidebar-width + ($main-sidebar-gap / 2)
+
+#content
+  padding-top: $header-content-gap
+  width: $site-width
+  margin: 0 auto
+
+  h1
+    @extend %h1
+  
+  h2
+    @extend %h2
+
+  h3
+    @extend %h3
+
+  h4
+    @extend %h4
+
+  h5
+    @extend %h5
+
+  a
+    color: $link-text
+    &:visited
+      color: $link-visited
+    &:hover
+      color: $link-hover
+    &:focus
+      color: $link-focus
+    &:active
+      color: $link-active
+
+  img
+    margin-bottom: 10px
+
+  ul.nobullet
+    list-style: none
+    padding-left: 0
+
+  ul.stats
+    margin: 0
+    padding: 0
+
+  .main_column
+    @extend %raised-bordered-container
+    padding: 20px 0
+
+  .center
+    text-align: left
+
+  form
+    @extend %sunken-bordered-container
+
+  table
+    margin-bottom: 20px
+    th, td
+      padding: 4px
+      border: 1px solid $table-cell-border
+    // Colhead_dark class used where th would make more sense
+    tr.colhead_dark td, th
+      background: $table-heading-background

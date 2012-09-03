@@ -2,7 +2,15 @@
 $primary:                             #3977b2
 
 // Global
-$body-background:                     #fff
+$body-background:                     #fafafa
+$text: #444
+
+// Links
+$link-text: $primary
+$link-hover: darken($primary,10%)
+$link-focus: $link-hover
+$link-active: darken($primary,15%)
+$link-visited: $link-text
 
 // Header
 $header-title-text:                   #fff
@@ -23,7 +31,8 @@ $menu-active:                         darken($menu-hover,10%)
 
 // Userinfo
 $userinfo-username:                   #fff
-$userinfo-off:                        #9ed5ff
+$userinfo-off:                        darken(desaturate($primary,10%),0.2)
+$userinfo-off:                        saturate(lighten($primary,20%),0.4)
 $userinfo-hover:                      lighten($userinfo-off,10%)
 $userinfo-focus:                      $userinfo-hover
 $userinfo-visited:                    $userinfo-off
@@ -31,7 +40,7 @@ $userinfo-active:                     #fff
 
 // Userinfo - Major
 $userinfo-major-background:           saturate(darken($primary,10%),10%)
-$userinfo-major-off:                  fade-out(#9ed5ff,0.5)
+$userinfo-major-off:                  lighten($primary,5%)
 $userinfo-major-hover:                lighten($userinfo-off,10%)
 $userinfo-major-focus:                $userinfo-hover
 $userinfo-major-visited:              $userinfo-off
@@ -67,3 +76,53 @@ $searchbars-autocomplete-background:  #fff
 $searchbars-autocomplete-border:      $searchbars-input-border
 $searchbars-autocomplete:             fade-out($searchbars-input-focus,0.5)
 $searchbars-autocomplete-highlight:   $primary
+
+// Raised and bordered containers
+$raised-bordered-container-background: #fff
+$raised-bordered-container-border: #e7e7e7
+$raised-bordered-container-shadow: fade-out($raised-bordered-container-border,0.25)
+
+// Sunken bordered container
+$sunken-bordered-container-background: #f6f6f6
+$sunken-bordered-container-border: #e7e7e7
+$sunken-bordered-container-shadow: #efefef
+
+// Sidebar
+$sidebar-box-border: fade-out($raised-bordered-container-border,0.25)
+$sidebar-box-border-highlight: #fff
+$sidebar-box-title: $primary
+$sidebar-box-title-shadow: #fff
+$sidebar-box-image-border: #fff
+$sidebar-box-image-shadow: #ddd
+
+// Recommended / Vanity House Additions
+$recommended-border: $raised-bordered-container-border
+
+// News
+$news-head-background: transparent
+$news-border: $raised-bordered-container-border
+$news-head-border: $news-border
+$news-head-title: #444
+$news-head-time-ago: fade-out($news-head-title,0.5)
+
+// Artist site links
+$artist-linkbox-link: #666
+$artist-linkbox-hover: $primary
+$artist-linkbox-focus: $artist-linkbox-hover
+$artist-linkbox-active: darken($primary,5%)
+$artist-linkbox-visited: $artist-linkbox-link
+
+// Discography links on artist page
+$artist-discog-links-background: #f6f6f6
+$artist-discog-links-border: #e7e7e7
+$artist-discog-links-shadow: #efefef
+$artist-discog-links-link: #666
+$artist-discog-links-hover: $primary
+$artist-discog-links-focus: $artist-discog-links-hover
+$artist-discog-links-active: darken($primary,5%)
+$artist-discog-links-visited: $artist-discog-links-link
+
+// Table
+$table-heading-background: #f9f9f9
+$table-cell-border: fade-out($raised-bordered-container-border,0.25)
+
