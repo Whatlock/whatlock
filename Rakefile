@@ -33,8 +33,7 @@ namespace :stylesheet do
   desc "Build stylesheet with compressed output, copy to server and open thread for comment"
   task :release do
     system %Q{compass compile -e production --force}
-    # SCP stylesheet to server
-    # Backup previous stylesheet
+    system %Q{cp build/whatlock.css ~/Dropbox/Public/whatlock.css}
     # Bump version number?
     Rake::Task['whatcd:thread:reply'].invoke
   end

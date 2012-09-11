@@ -3,6 +3,7 @@ $artist-discog-links-height: 30px
 $artist-discog-links-margin: 20px
 $artist-discog-links-count: 13
 $artist-image-margin-top: $artist-discog-links-height + $artist-discog-links-margin + 20px
+$artist-visible-tag-amount: 5
 
 body#artist
   // Set relative positioning for page changes
@@ -38,6 +39,9 @@ body#artist
         color: $artist-linkbox-visited
 
   // Discography links
+  // TODO: Increase font-size back to 100% and increase spacing between links
+  // TODO: Better styling for links
+  // TODO: 'More...' dropdown for less known options(see Bob Dylan page for example)
   #discog_table
     position: relative
     .box
@@ -51,13 +55,14 @@ body#artist
       +border-radius(4px)
       border: 1px solid $artist-discog-links-border
       padding: 0 5px
+      font-size: 90%
       a
         text-decoration: none
         color: $artist-discog-links-link
         float: left
         display: block
         text-align: center
-        padding: 4px 5px
+        padding: 4px 2px
         line-height: $artist-discog-links-height - 8
         +text-shadow(0 1px #fff)
         &:hover
@@ -93,29 +98,6 @@ body#artist
       position: relative
       left: -34px
       color: $text
-    // Release heading
-    tr.group td
-      background: fade-out($primary,0.95)
-    tr.group td.center
-      border-right: 0
-    tr.group td.center + td
-      border-left: 0
-    tr.group strong, tr.group .tags
-      position: relative
-      left: -24px
-    tr.group strong
-      @extend %h2
-      color: $primary
-      a
-        text-decoration: none
-    tr.group .tags
-      font-size: 90%
-      color: $primary
-      +opacity(0.8)
-      a
-        text-decoration: none
-    tr.group_torrent:hover td
-      background: fade-out($table-heading-background,0.1)
 
 
   // Artist Image
@@ -154,6 +136,16 @@ body#artist
       right: 0
       width: 5px
       background: $primary
+
+  // Tags
+  // TODO: Add icon for each tag? A tag icon, not an icon for each genre type
+  // TODO: Right align the numbers, left aligned the label?
+  .sidebar .box_tags
+    li
+      display: none
+    @for $i from 1 through $artist-visible-tag-amount
+      li:nth-child(#{$i})
+        display: block
 
   // Requests
   #requests
@@ -201,5 +193,6 @@ body#artist
     margin-bottom: 5px
 
   // Similar Artists
+  // TODO: Icons for minus,plus and delete links
   .sidebar .box_artists div a
     text-decoration: none

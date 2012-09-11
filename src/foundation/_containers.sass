@@ -8,8 +8,9 @@
     color: $primary
 
 %sunken-bordered-container
-  +background(linear-gradient($sunken-bordered-container-background 0, $sunken-bordered-container-background 50%, darken($sunken-bordered-container-background,1%) 50%, darken($sunken-bordered-container-background,1%) 100%))
+  background: $sunken-bordered-container-background
   +box-shadow(0 1px 1px #fff,0 1px 1px $sunken-bordered-container-shadow inset)
+  +box-sizing(border-box)
   +border-radius(4px)
   border: 1px solid $sunken-bordered-container-border
   padding: 10px

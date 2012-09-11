@@ -1,3 +1,30 @@
+$footer-spacing: 15px
+
 #footer
   width: $site-width
   margin: 0 auto
+  padding: $footer-spacing 0
+  border-top: 1px solid $footer-border
+  color: $footer-text
+
+  a
+    color: $link-text
+    &:visited
+      color: $link-visited
+    &:hover
+      color: $link-hover
+    &:focus
+      color: $link-focus
+    &:active
+      color: $link-active
+
+  p
+    margin: 0
+
+  // Copyright
+  p:first-child:after
+    content: " - Made pretty with Whatlock (Rev #{$VERSION}/#{$primary}) by Karlbright"
+  
+  // Time, used, load, date ,rev
+  p:last-child
+    display: block

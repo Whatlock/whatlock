@@ -305,14 +305,17 @@ $minor-width: 120px
             &:active
               color: $userinfo-major-active
         &#nav_irc
-          margin-left: -189px
+          margin-left: (($site-width / 2) * -1) + $logo-width + 210px
         &#nav_rules
           margin-left: -162px
+          margin-left: (($site-width / 2) * -1) + $logo-width + 238px
         &#nav_wiki
           margin-left: -123px
+          margin-left: (($site-width / 2) * -1) + $logo-width + 277px
         &#nav_staff
           +border-right-radius(4px)
           margin-left: -93px
+          margin-left: (($site-width / 2) * -1) + $logo-width + 310px
 
   #alerts
     position: relative
@@ -374,6 +377,7 @@ $minor-width: 120px
         background: $menu-hover
       &:after
         display: block
+      // TODO: Fix height issue for alert notification listing
       .alertbar
         display: block
         a

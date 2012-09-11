@@ -70,9 +70,36 @@ $main-width: $site-width - $sidebar-width - $main-sidebar-gap
 
   table
     margin-bottom: 20px
+    width: 100%
+    +box-sizing(border-box)
     th, td
       padding: 4px
       border: 1px solid $table-cell-border
     // Colhead_dark class used where th would make more sense
     tr.colhead_dark td, th
       background: $table-heading-background
+
+  table.torrent_table
+    // Release heading
+    tr.group td
+      background: fade-out($primary,0.95)
+    tr.group td.center
+      border-right: 0
+    tr.group td.center + td
+      border-left: 0
+    tr.group strong, tr.group .tags
+      position: relative
+      left: -24px
+    tr.group strong
+      @extend %h2
+      color: $primary
+      a
+        text-decoration: none
+    tr.group .tags
+      font-size: 90%
+      color: $primary
+      +opacity(0.8)
+      a
+        text-decoration: none
+    tr.group_torrent:hover td
+      background: fade-out($table-heading-background,0.1)
