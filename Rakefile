@@ -1,4 +1,19 @@
 require 'rake'
+require File.join(File.dirname(__FILE__), 'lib/source_annotation_extractor')
+
+desc "Enumerate all annotations (use notes:optimize, :fixme, :todo for focus)"
+task :notes do
+  SourceAnnotationExtractor.enumerate "OPTIMIZE|FIXME|TODO", :tag => true
+end
+
+namespace :notes do
+  ["OPTIMIZE", "FIXME", "TODO"].each do |annotation|
+    # desc "Enumerate all #{annotation} annotations"
+    task annotation.downcase.intern do
+      SourceAnnotationExtractor.enumerate annotation
+    end
+  end
+end
 
 namespace :whatcd do
   THREAD_URL = "https://ssl.what.cd/forums.php?action=viewthread&threadid=88089"
