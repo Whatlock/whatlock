@@ -22,19 +22,19 @@ $main-width: $site-width - $sidebar-width - $main-sidebar-gap
   margin: 0 auto
 
   h1
-    @extend %h1
+    +h1
   
   h2
-    @extend %h2
+    +h2
 
   h3
-    @extend %h3
+    +h3
 
   h4
-    @extend %h4
+    +h4
 
   h5
-    @extend %h5
+    +h5
 
   a
     color: $link-text
@@ -59,14 +59,14 @@ $main-width: $site-width - $sidebar-width - $main-sidebar-gap
     padding: 0
 
   .main_column
-    @extend %raised-bordered-container
+    +raised-bordered-container
     padding: 20px 0
 
   .center
     text-align: left
 
   form
-    @extend %sunken-bordered-container
+    +sunken-bordered-container
 
   table
     margin-bottom: 20px
@@ -91,7 +91,7 @@ $main-width: $site-width - $sidebar-width - $main-sidebar-gap
       position: relative
       left: -24px
     tr.group strong
-      @extend %h2
+      +h2
       color: $primary
       a
         text-decoration: none

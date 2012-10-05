@@ -86,10 +86,10 @@ $raised-bordered-container-background: #fff
 $raised-bordered-container-border: #e7e7e7
 $raised-bordered-container-shadow: fade-out($raised-bordered-container-border,0.25)
 
-// Sunken bordered container
-$sunken-bordered-container-background: #f6f6f6
-$sunken-bordered-container-border: #e7e7e7
-$sunken-bordered-container-shadow: #efefef
+// Sunken bordered container - layerable using rgba()
+$sunken-bordered-container-background: rgba(0,0,0,0.02)
+$sunken-bordered-container-border: rgba(0,0,0,0.09)
+$sunken-bordered-container-shadow: rgba(0,0,0,0.06)
 
 // Sidebar
 $sidebar-box-border: fade-out($raised-bordered-container-border,0.25)
@@ -130,3 +130,8 @@ $artist-discog-links-visited: $artist-discog-links-link
 $table-heading-background: #f9f9f9
 $table-cell-border: fade-out($raised-bordered-container-border,0.25)
 
+// Basic/Advanced Search
+$taglist-tag-border: $sunken-bordered-container-border
+$taglist-tag-link: fade-out($text,0.25)
+$taglist-tag-hover: fade-out(#fff,0.5)
+$taglist-tag-hover-link: $primary

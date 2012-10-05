@@ -1,4 +1,4 @@
-%raised-bordered-container
+=raised-bordered-container
   border: 1px solid $raised-bordered-container-border
   background: $raised-bordered-container-background
   +box-shadow($raised-bordered-container-shadow 0 1px 2px)
@@ -7,11 +7,19 @@
     font-size: 20px
     color: $primary
 
-%sunken-bordered-container
+=sunken-bordered-container
   background: $sunken-bordered-container-background
   +box-shadow(0 1px 1px #fff,0 1px 1px $sunken-bordered-container-shadow inset)
   +box-sizing(border-box)
   +border-radius(4px)
   border: 1px solid $sunken-bordered-container-border
   padding: 10px
+
+=remove-sunken-bordered-container
+  background: none
+  +box-shadow(none)
+  +box-sizing(content-box)
+  +border-radius(0)
+  border: 0
+  padding: 0
   

@@ -1,15 +1,73 @@
 body#torrents
   // Search form
   // TODO: Icons for tags
+  // TODO: Icons for category
   // TODO: Better positioning of elements
-  // TODO: General cleanup and styling needs to be applied, but i hate forms and i don't want to get caught up on this
-  form[name='filter']
+  // TODO: General cleanup and styling needs to be applied
+  form.search_form
+    +remove-sunken-bordered-container
     width: $site-width
     margin-bottom: 20px
+
+    // Remove stupid borders
     th, td
       border: 0
+
+    // Form contents wrapper
+    .box
+      +sunken-bordered-container
+
+    // Title
+    h3
+      margin-top: 0
+
+    // Tag list as <table>
+    #taglist
+      +sunken-bordered-container
+      display: block
+      margin-bottom: 10px
+      padding: 0
+      overflow: hidden
+      tbody, tr, td
+        display: block
+      tr
+        border-bottom: 1px solid $taglist-tag-border
+        overflow: hidden
+        &:last-child
+          border-bottom: 0
+      td
+        float: left
+        width: 131px
+        padding: 0
+        +box-sizing(border-box)
+        border-right: 1px solid $taglist-tag-border
+        &:last-child
+          border-right: 0
+          width: 130px
+      a
+        display: block
+        padding: 10px
+        text-decoration: none
+        color: $taglist-tag-link
+        font-size: 11px
+        font-weight: bold
+        &:hover, &:active
+          background: $taglist-tag-hover
+          color: $taglist-tag-hover-link
+
+    // View/hide tags link
+    #taglist + table
+      display: none
+
+    // Actions and results count
     .submit
       text-align: right
+
+    // Results count
+    .submit span
+      font-weight: bold
+      &:before
+        content: "Your search returned "
 
   // Results table
   #torrent_table
