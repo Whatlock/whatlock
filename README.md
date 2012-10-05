@@ -25,6 +25,15 @@ It would be great to create a responsive stylesheet based on Whatlock. It is som
 
 ```rake stylesheets:watch```
 
+#### How you can help
+
+There are a list of items that I have marked as TODO throughout the
+code.  You can see a list by running the following command:
+
+```rake notes```
+
+Would be great to see these changes fixed up and pull request sent.
+
 ### Shortcuts
 
 ```rake whatcd:thread```
