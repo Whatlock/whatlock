@@ -62,3 +62,11 @@ Would be great to see these changes fixed up and pull request sent.
 * passo
 * saltydog
 * jungletek
+
+
+### Thanks for the icons
+
+* (Book)[http://thenounproject.com/noun/book/#icon-No1300] designed by (John Caserta)[http://thenounproject.com/johncaserta] from The Noun Project
+* (Tag)[http://thenounproject.com/noun/tag/#icon-No1319] designed by (John Caserta)[http://thenounproject.com/johncaserta] from The Noun Project
+* (Wrench)[http://thenounproject.com/noun/wrench/#icon-No1320] designed by (John Caserta)[http://thenounproject.com/johncaserta] from The Noun Project
+* (Compact Disc)[http://thenounproject.com/noun/compact-disc/#icon-No1231] designed by (John Caserta)[http://thenounproject.com/johncaserta] from The Noun Project

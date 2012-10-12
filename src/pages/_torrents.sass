@@ -1,6 +1,8 @@
 $category-option-height: 120px
 $category-option-width: 131px
 $taglist-tag-width: $category-option-width
+$torrent-table-margin: 20px
+$torrent-image-margin-top: 20px
 
 body#torrents
   // Search form
@@ -111,5 +113,114 @@ body#torrents
         content: "Your search returned "
 
   // Results table
+  // TODO: Style 'sort by' currently shown as tr.colhead
+  // TODO: Icons for torrent group headings
   #torrent_table
+    +raised-bordered-container
+    display: block
     width: $site-width
+    tbody
+      display: table
+      margin: 20px
+      width: $site-width - 2px - 40px
+    // Column headings with sorting links
+    tr.colhead
+      display: none
+    // Tags
+    .tags
+      left: 0
+
+  // Pagination
+  // TODO: Style this up a lil nicer
+  // TODO: Shouldnt be sunken
+  form.search_form + .linkbox, #torrent_table + .linkbox
+    +sunken-bordered-container
+    +box-shadow(none)
+    width: $site-width
+    text-align: center
+    a
+      text-decoration: none
+  // Top Pagination
+  form.search_form + .linkbox
+    +border-bottom-radius(0)
+    border-bottom: 0
+  #torrent_table + .linkbox
+    +border-top-radius(0)
+    border-top: 0
+    margin-top: -20px
+
+
+  // Torrent Detail
+  .header
+    overflow: hidden
+    margin-bottom: 20px
+    h2
+      +h2
+      font-size: 30px
+      margin: 0
+      margin-left: -20px
+      color: $primary
+      a
+        text-decoration: none
+        display: block
+        font-size: 15px
+        color: $text
+        margin-left: 20px
+    .linkbox
+      font-size: 90%
+      a
+        text-decoration: none
+        color: $artist-linkbox-link
+        &:hover
+          color: $artist-linkbox-hover
+        &:focus
+          color: $artist-linkbox-focus
+        &:active
+          color: $artist-linkbox-active
+        &:visited
+          color: $artist-linkbox-visited
+
+  // Torrent Image
+  .sidebar .box_image
+    border: 0
+    +box-shadow(none)
+    overflow: hidden
+    position: relative
+    padding-left: 0
+    padding-bottom: 0
+    margin-left: -10px
+    margin-top: $torrent-image-margin-top
+    p
+      margin: 0
+    div
+      padding: 0 !important
+    .head
+      display: none
+    img
+      margin-bottom: 0
+      width: 240px
+      max-width: 240px !important
+      margin-right: 5px
+    // Shadow
+    &:before, &:after
+      content: ""
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 10
+      width: 10px
+      height: 500px
+    &:before
+      +background-image(linear-gradient(left,rgba(0,0,0,0.25),rgba(0,0,0,0)))
+    &:after
+      left: auto
+      right: 0
+      width: 5px
+      background: $primary
+
+  .main_column
+    padding: 20px
+
+  .box
+    margin-bottom: 20px

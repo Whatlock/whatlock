@@ -80,21 +80,27 @@ $main-width: $site-width - $sidebar-width - $main-sidebar-gap
       background: $table-heading-background
 
   table.torrent_table
-    // Release heading
-    tr.group td
-      background: fade-out($primary,0.95)
-    tr.group td.center
+    // Release heading and individual torrent
+    tr.group, tr.torrent
+      td
+        background: $torrent-table-torrent-heading
+      td.center
+        border-right: 0
+      td.center + td
+        border-left: 0
+      strong, .tags
+        position: relative
+        left: -24px
+      strong
+        +h2
+        color: $primary
+        a
+          text-decoration: none
+    // Individual torrent
+    tr.torrent td:first-child
       border-right: 0
-    tr.group td.center + td
+    tr.torrent td.cats_col
       border-left: 0
-    tr.group strong, tr.group .tags
-      position: relative
-      left: -24px
-    tr.group strong
-      +h2
-      color: $primary
-      a
-        text-decoration: none
     // Tags
     tr.group .tags
       font-size: 90%
@@ -102,5 +108,9 @@ $main-width: $site-width - $sidebar-width - $main-sidebar-gap
       +opacity(0.8)
       a
         text-decoration: none
+    // Collapse / Expand link
+    a[title^='Collapse'], a[title^='Expand']
+      text-decoration: none
+    // Highlight row on hover
     tr.group_torrent:hover td
       background: fade-out($table-heading-background,0.1)
