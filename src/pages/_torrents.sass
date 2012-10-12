@@ -1,7 +1,12 @@
+$category-option-height: 120px
+$category-option-width: 131px
+$taglist-tag-width: $category-option-width
+
 body#torrents
   // Search form
   // TODO: Icons for tags
   // TODO: Icons for category
+  // TODO: Add height to category selection. See variables.
   // TODO: Better positioning of elements
   // TODO: General cleanup and styling needs to be applied
   form.search_form
@@ -21,6 +26,42 @@ body#torrents
     h3
       margin-top: 0
 
+    // Category selection
+    table:first-child + table.cat_list
+      +sunken-bordered-container
+      display: block
+      padding: 0
+      tbody, tr, td
+        display: block
+      tr
+        overflow: hidden
+      td
+        +box-sizing(border-box)
+        float: left
+        width: $category-option-width
+        padding: 0
+        position: relative
+        overflow: hidden
+        border-right: 1px solid $taglist-tag-border
+        &:last-child
+          border-right: 0
+          width: $category-option-width - 1px
+      // Checkbox
+      input
+        display: none
+      // Label
+      label
+        color: $taglist-tag-link
+        font-size: 11px
+        font-weight: bold
+        display: block
+        padding: 8px 10px
+      label:hover
+        cursor: pointer
+      input:checked + label
+        background: $category-option-checked-background
+        color: $category-option-checked-text
+
     // Tag list as <table>
     #taglist
       +sunken-bordered-container
@@ -37,13 +78,13 @@ body#torrents
           border-bottom: 0
       td
         float: left
-        width: 131px
+        width: $taglist-tag-width
         padding: 0
         +box-sizing(border-box)
         border-right: 1px solid $taglist-tag-border
         &:last-child
           border-right: 0
-          width: 130px
+          width: $taglist-tag-width - 1px
       a
         display: block
         padding: 8px 10px

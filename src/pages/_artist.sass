@@ -18,7 +18,7 @@ body#artist
   .header
     margin-bottom: $artist-header-spacing
     h2
-      @extend %h1
+      +h1
       font-size: 30px
       margin: 0
       color: $primary
@@ -92,7 +92,7 @@ body#artist
       display: none
     // Section title
     tr.colhead_dark strong
-      @extend %h1
+      +h1
       display: inline-block
       margin-top: -22px
       position: relative
@@ -155,7 +155,7 @@ body#artist
   #requests:before
     display: block
     content: "Requests"
-    @extend %h1
+    +h1
     position: relative
     top: -5px
 
@@ -167,14 +167,14 @@ body#artist
   #flipper_head
     margin-bottom: 10px
   #flipper_title
-    @extend %h2
+    +h2
     color: $text
     display: block
   #flip_to
     font-size: 12px
     text-decoration: none
   #flip_view_1, #flip_view_2
-    @extend %sunken-bordered-container
+    +sunken-bordered-container
     width: $main-width - 2px - 40px - 20px !important
 
   // About the artist
